@@ -2,10 +2,12 @@
 pgrep -x sxhkd >/dev/null || sxhkd &
 
 bspc monitor -d I II III IV V
-xrandr --output eDP-1 --mode 1366x768 --right-of HDMI-1
-xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
+# (I put in the xrandr setup for my monitor set up so change this to fit yours if needed)
+#xrandr --output eDP-1 --mode 1366x768 --right-of HDMI-1
+#xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
 xset -dpms off
 
+unclutter -idle 10 &
 xsetroot -cursor_name left_ptr
 xinput --set-prop 10 "libinput Accel Profile Enabled" 0, 1
 
