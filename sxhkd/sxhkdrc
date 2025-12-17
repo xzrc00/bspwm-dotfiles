@@ -1,0 +1,57 @@
+
+### -------++ sxhkd config ++------- ###
+
+# Refresh bspwm or sxhkd
+super + shift + c
+	bspc wm -r
+
+super + Escape
+	pkill sxhkd && sxhkd &
+
+# Open Rofi (Program Launcher)
+super + d
+    rofi -show drun
+
+# Open Alacritty (Terminal)
+super + Return
+	alacritty
+
+# Open Thunar (File Manager)
+super + e
+	thunar
+
+# Screenshot using Flameshot
+Print
+	flameshot gui
+
+# Close window
+super + q
+	bspc node -c
+
+# Toggle tiling mode of window
+super + v
+	bspc node -t {floating,tiled}
+
+# Toggle fullscreen
+super + f
+	bspc node -t '~fullscreen'
+
+# Move focus
+super + {Left,Right,Up,Down}
+    bspc node -f {west,east,north,south}
+
+# Move windows
+super + shift + {Left,Right,Up,Down}
+    bspc node -s {west,east,north,south}
+
+# Toggle window borders on and off / Toggle gaps on and off
+super + b
+    bspc config border_width $(($(bspc config border_width) > 0 ? 0 : 1))
+super + c
+    bspc config window_gap $(($(bspc config window_gap) > 0 ? 0 : 3))
+
+# Move to or move programs to different workspaces
+super + {1-9,0}
+	bspc desktop -f focused:^{1-9,10}
+super + shift + {1-9,0}
+	bspc node -d focused:^{1-9,10}
