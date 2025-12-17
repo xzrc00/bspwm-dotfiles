@@ -9,7 +9,7 @@ xset -dpms off
 xsetroot -cursor_name left_ptr
 xinput --set-prop 10 "libinput Accel Profile Enabled" 0, 1
 
-feh --bg-fill /home/xzrc07/Images/20.png
+feh --bg-fill /home/xzrc07/Images/purple.jpg
 
 bspc config border_width 1
 bspc config window_gap 2
