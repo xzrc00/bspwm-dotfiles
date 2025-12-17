@@ -30,7 +30,7 @@ super + q
 
 # Toggle tiling mode of window
 super + v
-	bspc node -t {floating,tiled}
+	bspc node -t "~floating"
 
 # Toggle fullscreen
 super + f
